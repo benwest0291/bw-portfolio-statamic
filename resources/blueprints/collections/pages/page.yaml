@@ -1,0 +1,59 @@
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Blocks
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: blocks
+            field:
+              type: replicator
+              display: Blocks
+              sets:
+                blocks:
+                  display: Blocks
+                  icon: addon-boxes-stack
+                  sets:
+                    masthead:
+                      display: Masthead
+                      icon: media-image-picture-orientation
+                      fields:
+                        -
+                          import: masthead
+                          prefix: masthead_
+                    technology:
+                      display: Technology
+                      icon: programming-script-code-brackets
+                      fields:
+                        -
+                          import: technology
+                          prefix: technology_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

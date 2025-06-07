@@ -1,0 +1,8 @@
+title: Technology
+fields:
+  -
+    handle: heading
+    field:
+      remove_empty_nodes: false
+      type: bard
+      display: Heading

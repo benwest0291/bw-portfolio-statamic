@@ -1,0 +1,67 @@
+<header class="w-full bg-blue-dark sticky shadow-b top-0 z-50" 
+        x-data="{ mobileMenuOpen: false, scrolled: false }"
+        x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 10 })"
+        :class="{ 'bg-opacity-95 backdrop-blur-md': scrolled }">
+    
+    <div class="container mx-auto px-4 lg:px-6">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+            <div>
+                <a href="/" title="Ben West Dev" class="group flex items-center">
+                   {{ global_details:logo }}
+                        <img src="{{ glide:url fit='crop_focal' format='webp' }}" alt="{{ alt }}" class="h-10 lg:h-12 w-[280px]" />
+                    {{ /global_details:logo }}
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-8">
+                {{ nav:main_navigation }}
+                    <a href="{{ url }}" 
+                       class="text-white hover:pointer text-lg font-roboto {{ if last }} px-5 py-[5.5px] bg-orange rounded text-white border-1 border-white{{ /if }}">
+                        <span class="relative z-10">{{ title }}</span>
+                    </a>
+                {{ /nav:main_navigation }}
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="md:hidden relative p-3 rounded-xl text-white hover:text-blue-light hover:bg-blue-light/10 focus:outline-none focus:ring-2 focus:ring-blue-light/50 transition-all duration-300 group"
+                    :class="{ 'bg-blue-light/10': mobileMenuOpen }">
+                <span class="sr-only">Toggle navigation menu</span>
+                <div class="relative w-6 h-6">
+                    <span class="absolute top-1 left-0 w-full h-0.5 bg-current transform transition-all duration-300 origin-center"
+                          :class="mobileMenuOpen ? 'rotate-45 translate-y-2' : ''"></span>
+                    <span class="absolute top-3 left-0 w-full h-0.5 bg-current transition-opacity duration-300"
+                          :class="mobileMenuOpen ? 'opacity-0' : ''"></span>
+                    <span class="absolute top-5 left-0 w-full h-0.5 bg-current transform transition-all duration-300 origin-center"
+                          :class="mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
+                </div>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-blue-dark to-blue shadow-2xl border-t border-blue-light/20"
+             x-show="mobileMenuOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             @click.away="mobileMenuOpen = false">
+            
+            <nav class="px-4 py-6 space-y-2">
+                {{ nav:main_navigation }}
+                    <a href="{{ url }}" 
+                       class="group flex items-center px-4 py-4 text-white hover:text-blue-light hover:bg-blue-light/10 rounded-xl transition-all duration-300 font-crimson font-medium text-lg tracking-wide {{ if last }}bg-orange-500 border-2 border-white{{ /if }}"
+                       @click="mobileMenuOpen = false">
+                        <span class="flex-1">{{ title }}</span>
+                        <svg class="w-5 h-5 text-blue-light/60 group-hover:text-blue-light group-hover:translate-x-1 transition-all duration-300" 
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                {{ /nav:main_navigation }}
+            </nav>
+        </div>
+    </div>
+</header>

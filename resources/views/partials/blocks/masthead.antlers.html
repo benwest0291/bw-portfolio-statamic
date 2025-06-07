@@ -1,0 +1,38 @@
+<section class="relative bg-blue-dark py-42 lg:pt-20 lg:pb-12 overflow-hidden">
+    {{ masthead_background_image }}
+        <img src="{{ glide:url fit='crop_focal' format='webp' }}" alt="{{ alt }}" class="absolute inset-0 w-full h-full object-cover z-0" />
+    {{ /masthead_background_image}}
+    
+    <div class="container mx-auto px-4 lg:px-6 relative z-10 lg:mt-14 flex justify-center align-center flex-col gap-4">
+        {{ if heading }}
+            <h1 class="masthead-text masthead-heading text-white text-5xl lg:text-7xl font-playfair text-center line-clamp-4">{{ heading }}</h1>
+        {{ /if }}
+
+        {{ if sub_heading }}
+            <div class="flex justify-center mt-2">
+                <p class="masthead-text masthead-sub-heading text-lg text-center text-white w-full lg:w-1/3">{{ sub_heading }}</p>
+            </div>
+        {{ /if }}
+
+        <div class="masthead-buttons flex justify-center gap-4 mt-2">
+            {{ if masthead_cv_button}}
+                <a title="{{ masthead_cv_button:button_text }}" class="bg-blue-light text-blue-dark px-5 py-2 border-1 border-white rounded" href="{{ masthead_cv_button:cv_link}}">{{ masthead_cv_button:button_text }}</a>
+            {{ /if }}
+
+            {{ if masthead_spare_button}}
+                <a class="bg-orange text-white px-5 py-2 border-1 border-white rounded" href="{{ masthead_spare_button:link }}">{{ masthead_spare_button:text }}</a>
+            {{ /if}}
+        </div>
+
+        {{ if rossette }}
+            <div class="masthead-rosette hidden lg:block">
+                <div class="flex justify-end mt-2">
+                    {{ rossette }}
+                        <img src="{{ glide:url fit='crop_focal' format='webp' }}" alt="{{ alt }}"/>
+                    {{ /rossette }}
+                </div>
+            </div>
+        {{ /if}}
+        
+    </div>
+</section>

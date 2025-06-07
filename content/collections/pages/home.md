@@ -1,16 +1,24 @@
 ---
-title: Home
 id: home
-template: home
 blueprint: pages
+title: Home
+template: pages
+updated_by: 8bbbbdca-7fc9-4c6a-a206-192c6c7e2726
+updated_at: 1749313839
+blocks:
+  -
+    id: mbmcl9ua
+    masthead_heading: 'Frontend Developer & <br> Product <span class="text-orange">Builde<span class="hammer-letter">r</span></span>'
+    masthead_sub_heading: 'Building performant, accessible web applications and bespoke websites'
+    type: masthead
+    enabled: true
+    masthead_background_image: code/masthead-bg.png
+    masthead_cv_button:
+      button_text: 'Download CV'
+      cv_link: google.com
+    masthead_spare_button:
+      text: 'About Ben'
+      link: 'entry::9c4f69f3-7818-4035-927d-19d6bbb36ff5'
+    masthead_rossette:
+      - logos/statamic-cred.svg
 ---
-## Welcome to your brand new Statamic site!
-
-Not sure what to do next? Here are a few ideas, but feel free to explore in your own way, in your own time.
-
-- [Jump into the Control Panel](/cp) and edit this page or begin setting up your own collections and blueprints.
-- [Head to the docs](https://statamic.dev) and learn how Statamic works.
-- [Watch some Statamic videos](https://youtube.com/statamic) on YouTube.
-- [Join our Discord chat](https://statamic.com/discord) and meet thousands of other Statamic developers.
-- [Start a discussion](https://github.com/statamic/cms/discussions) and get answers to your questions.
-- [Star Statamic on Github](https://github.com/statamic/cms) if you enjoy using it!

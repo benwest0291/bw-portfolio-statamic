@@ -1,0 +1,29 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Header
+        fields:
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Logo
+      -
+        display: Footer
+        fields:
+          -
+            handle: copyright
+            field:
+              type: text
+              display: Copyright
+              width: 50
+          -
+            handle: flair
+            field:
+              type: text
+              display: Flair
+              width: 50
