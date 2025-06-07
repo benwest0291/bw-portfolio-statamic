@@ -27,3 +27,4 @@ tabs:
               type: text
               display: Flair
               width: 50
+              antlers: true
