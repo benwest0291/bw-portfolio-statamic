@@ -1,0 +1,32 @@
+title: Breadcrumbs
+fields:
+  -
+    handle: show_breadcrumbs
+    field:
+      type: toggle
+      display: 'Show Breadcrumbs'
+      instructions: 'Toggle to show or hide the breadcrumbs navigation'
+      default: true
+  -
+    handle: breadcrumb_separator
+    field:
+      type: select
+      display: 'Breadcrumb Separator'
+      instructions: 'Choose the separator style between breadcrumb items'
+      default: 'chevron'
+      options:
+        chevron: 'Chevron (>)'
+        slash: 'Slash (/)'
+        arrow: 'Arrow (→)'
+        dot: 'Dot (•)'
+      if:
+        show_breadcrumbs: 'equals true'
+  -
+    handle: home_text
+    field:
+      type: text
+      display: 'Home Text'
+      instructions: 'Text to display for the home/root link'
+      default: 'Home'
+      if:
+        show_breadcrumbs: 'equals true'

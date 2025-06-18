@@ -28,3 +28,32 @@ tabs:
               display: Flair
               width: 50
               antlers: true
+  scripts:
+    display: Scripts
+    sections:
+      -
+        display: Scripts
+        fields:
+          -
+            handle: header
+            field:
+              type: code
+              display: Header
+          -
+            handle: footer
+            field:
+              type: code
+              display: Footer
+  footer:
+    display: Footer
+    sections:
+      -
+        display: Footer
+        fields:
+          -
+            handle: footer_rosette
+            field:
+              min_files: 1
+              container: assets
+              type: assets
+              display: 'Footer Rosette'

@@ -37,6 +37,13 @@ tabs:
                         -
                           import: technology
                           prefix: technology_
+                    breadcrumbs:
+                      display: Breadcrumbs
+                      icon: map-navigation-compass
+                      fields:
+                        -
+                          import: breadcrumbs
+                          prefix: breadcrumbs_
   sidebar:
     display: Sidebar
     sections:

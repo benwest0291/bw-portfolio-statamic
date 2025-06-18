@@ -1,0 +1,52 @@
+<section class="bg-blue-light/20 py-4 lg:py-6 border-b border-blue-light/30">
+    <div class="container mx-auto px-4 lg:px-6">
+        {{ if show_breadcrumbs }}
+            <nav aria-label="Breadcrumb" class="flex items-center">
+                <ol class="flex items-center space-x-2 lg:space-x-3 text-sm lg:text-base font-roboto">
+                    <!-- Home Link -->
+                    <li class="flex items-center">
+                        <a href="/" 
+                           class="text-blue-dark hover:text-blue transition-colors duration-300 
+                                  hover:underline decoration-orange decoration-2 underline-offset-4">
+                            {{ home_text ?? 'Home' }}
+                        </a>
+                    </li>
+
+                    <!-- Breadcrumb Trail -->
+                    {{ nav:breadcrumbs }}
+                        {{ unless first }}
+                            <li class="flex items-center space-x-2 lg:space-x-3">
+                                <!-- Separator -->
+                                <span class="text-blue/60 select-none" aria-hidden="true">
+                                    {{ if breadcrumb_separator == 'slash' }}
+                                        /
+                                    {{ elseif breadcrumb_separator == 'arrow' }}
+                                        →
+                                    {{ elseif breadcrumb_separator == 'dot' }}
+                                        •
+                                    {{ else }}
+                                        <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                        </svg>
+                                    {{ /if }}
+                                </span>
+
+                                {{ if last }}
+                                    <span class="text-blue font-medium" aria-current="page">
+                                        {{ title }}
+                                    </span>
+                                {{ else }}
+                                    <a href="{{ url }}" 
+                                       class="text-blue-dark hover:text-blue transition-colors duration-300 
+                                              hover:underline decoration-orange decoration-2 underline-offset-4">
+                                        {{ title }}
+                                    </a>
+                                {{ /if }}
+                            </li>
+                        {{ /unless }}
+                    {{ /nav:breadcrumbs }}
+                </ol>
+            </nav>
+        {{ /if }}
+    </div>
+</section>

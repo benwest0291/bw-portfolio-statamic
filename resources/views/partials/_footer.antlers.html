@@ -1,4 +1,49 @@
-<footer class="w-full mt-auto bg-white">
+<footer class="w-full bg-blue-dark py-2">
+    <div class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 md:grid-cols-4">
+            <div>
+                <a href="/" title="Ben West Dev" class="group flex items-center">
+                    {{ global_details:logo }}
+                         <img src="{{ glide:url fit='crop_focal' format='webp' }}" alt="{{ alt }}" class="h-10 lg:h-12 w-[280px]" />
+                     {{ /global_details:logo }}
+                 </a>
+            </div>
+
+            <div>
+                <h2 class="text-white font-playfair text-lg lg:text-3xl mb-3">Navigation</h2>
+                <ul>
+                    {{ nav:useful_links_navigation }}
+                        <li>
+                            <a class="text-white hover:text-orange ease-in duration-300" title="{{ title }}" href="{{ url }}">{{ title }}</a>
+                        </li>
+                    {{ /nav:useful_links_navigation }}
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-white font-playfair text-lg lg:text-3xl mb-2">Services</h2>
+                <ul>
+                    {{ nav:services_navigation }}
+                    <li>
+                        <a class="text-white hover:text-orange ease-in duration-300" title="{{ title }}" href="{{ url }}">{{ title }}</a>
+                    </li>
+                    {{ /nav:services_navigation }}
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="text-white font-playfair text-lg lg:text-3xl mb-2">Blog</h2>
+                <ul>
+                    <li>
+                        <a class="text-white hover:text-orange ease-in duration-300" title="{{ title }}" href="{{ url }}">{{ title }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="w-full mt-auto bg-white">
     <div class="container mx-auto px-4 py-6">
         <div class="grid grid-cols-1 md:grid-cols-2">
             {{ if global_details:copyright }}
@@ -10,4 +55,4 @@
             {{ /if }}
         </div>
     </div>
-</footer>
+</div>

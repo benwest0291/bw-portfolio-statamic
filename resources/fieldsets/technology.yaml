@@ -3,6 +3,20 @@ fields:
   -
     handle: heading
     field:
-      remove_empty_nodes: false
-      type: bard
+      type: text
       display: Heading
+      instructions: 'Enter the main heading for the technology section'
+      required: true
+  -
+    handle: technology_icons
+    field:
+      type: assets
+      display: 'Technology Icons'
+      instructions: 'Upload technology icons (Angular, React, Vue, etc.)'
+      container: assets
+      max_files: 20
+      mode: grid
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      show_set_alt: true

@@ -3,18 +3,27 @@
     {{ if type == "masthead" }}
 
         {{ partial:partials/blocks/masthead
-            background_image="{ masthead_background_image }"
+            masthead_background_image="{ masthead_background_image }"
             rossette="{ masthead_rossette }"
             heading="{ masthead_heading }"
             sub_heading="{ masthead_sub_heading }"
-            cv_button
-            spare_button
+            masthead_cv_button="{ masthead_cv_button }"
+            masthead_spare_button="{ masthead_spare_button }"
         }}
 
     {{ elseif type == "technology" }}
 
         {{ partial:partials/blocks/technology
             heading="{ technology_heading }"
+            technology_icons="{ technology_technology_icons }"
+        }}
+
+    {{ elseif type == "breadcrumbs" }}
+
+        {{ partial:partials/blocks/breadcrumbs
+            show_breadcrumbs="{ breadcrumbs_show_breadcrumbs }"
+            breadcrumb_separator="{ breadcrumbs_breadcrumb_separator }"
+            home_text="{ breadcrumbs_home_text }"
         }}
 
     {{ /if }}

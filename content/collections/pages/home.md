@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 template: pages
 updated_by: 8bbbbdca-7fc9-4c6a-a206-192c6c7e2726
-updated_at: 1749313839
+updated_at: 1749730346
 blocks:
   -
     id: mbmcl9ua
@@ -21,4 +21,29 @@ blocks:
       link: 'entry::9c4f69f3-7818-4035-927d-19d6bbb36ff5'
     masthead_rossette:
       - logos/statamic-cred.svg
+  -
+    id: mbtbxh1e
+    breadcrumbs_show_breadcrumbs: true
+    breadcrumbs_breadcrumb_separator: arrow
+    breadcrumbs_home_text: Home
+    type: breadcrumbs
+    enabled: true
+  -
+    id: mbtbpj46
+    technology_heading: 'My Toolkit'
+    technology_technology_icons:
+      - tech-icons/html5.svg
+      - tech-icons/sass.svg
+      - tech-icons/tailwindcss.svg
+      - tech-icons/javascript.svg
+      - tech-icons/alpinedotjs.svg
+      - tech-icons/typescript.svg
+      - tech-icons/angular.svg
+      - tech-icons/react.svg
+      - tech-icons/php.svg
+      - tech-icons/laravel.svg
+      - tech-icons/statamic.svg
+      - tech-icons/figma.svg
+    type: technology
+    enabled: true
 ---
