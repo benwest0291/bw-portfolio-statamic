@@ -3,12 +3,12 @@
     {{ if type == "masthead" }}
 
         {{ partial:partials/blocks/masthead
-            masthead_background_image="{ masthead_background_image }"
-            rossette="{ masthead_rossette }"
-            heading="{ masthead_heading }"
-            sub_heading="{ masthead_sub_heading }"
-            masthead_cv_button="{ masthead_cv_button }"
-            masthead_spare_button="{ masthead_spare_button }"
+            :masthead_background_image="masthead_background_image"
+            :rossette="masthead_rossette"
+            :heading="masthead_heading"
+            :sub_heading="masthead_sub_heading"
+            :masthead_cv_button="masthead_cv_button"
+            :masthead_spare_button="masthead_spare_button"
         }}
 
     {{ elseif type == "technology" }}
