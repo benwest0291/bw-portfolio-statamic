@@ -1,0 +1,207 @@
+<section class="py-16 bg-white grid grid-col-2 relative overflow-hidden">
+    <div class="hidden lg:block absolute top-10 right-10 text-orange/20 text-6xl transform rotate-12 animate-bounce-slow">
+        <i class="fas fa-code"></i>
+    </div>
+    <div class="hidden lg:block absolute bottom-10 left-10 text-blue/30 text-5xl transform -rotate-12 animate-float-1">
+        <i class="fas fa-laptop-code"></i>
+    </div>
+    <div class="hidden lg:block absolute top-3/4 right-10 text-orange/40 text-5xl transform rotate-12 animate-float-2">
+        <i class="fas fa-rocket"></i>
+    </div>
+    <div class="hidden lg:block absolute top-10 left-10 text-blue/30 text-4xl transform -rotate-12 animate-float-3">
+        <i class="fas fa-lightbulb"></i>
+    </div>
+    <div class="hidden lg:block absolute bottom-10 right-1/4 text-orange/25 text-4xl transform rotate-12 animate-spin-slow">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <div class="container mx-auto px-4 lg:px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column - Content -->
+                <div class="text-center lg:text-left">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center px-4 py-2 bg-orange/10 rounded-full text-orange text-sm font-semibold mb-6">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Newsletter
+                    </div>
+
+                    <!-- Heading -->
+                    <h2 class="text-blue-dark font-playfair text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                        {{ newsletter_heading ?? "Stay Updated with the Latest" }}
+                    </h2>
+                    
+                    <!-- Description -->
+                    <p class="text-blue text-lg lg:text-xl mb-8 leading-relaxed">
+                        {{ newsletter_description ?? "Get exclusive insights, project updates, and web development tips delivered directly to your inbox. Join a community of developers and business owners who stay ahead of the curve." }}
+                    </p>
+
+                    <!-- Stats or highlights -->
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="text-center p-4 bg-blue/5 rounded-xl">
+                            <div class="text-2xl font-bold text-orange mb-1">500+</div>
+                            <div class="text-blue text-sm">Subscribers</div>
+                        </div>
+                        <div class="text-center p-4 bg-orange/5 rounded-xl">
+                            <div class="text-2xl font-bold text-blue-dark mb-1">Weekly</div>
+                            <div class="text-blue text-sm">Updates</div>
+                        </div>
+                        <div class="text-center p-4 bg-blue/5 rounded-xl">
+                            <div class="text-2xl font-bold text-orange mb-1">0</div>
+                            <div class="text-blue text-sm">Spam</div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="space-y-4 mb-8">
+                        {{ newsletter_benefits }}
+                            <div class="flex items-center text-blue">
+                                <i class="{{ icon ?? 'fas fa-check-circle' }} text-orange mr-3"></i>
+                                <span>{{ title }}</span>
+                            </div>
+                        {{ /newsletter_benefits }}
+                        
+                        {{ if !newsletter_benefits }}
+                            <div class="flex items-center text-blue">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>Weekly development insights and tutorials</span>
+                            </div>
+                            <div class="flex items-center text-blue">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>Behind-the-scenes project updates</span>
+                            </div>
+                            <div class="flex items-center text-blue">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>Exclusive resources and early access</span>
+                            </div>
+                            <div class="flex items-center text-blue">
+                                <i class="fas fa-check-circle text-orange mr-3"></i>
+                                <span>Industry trends and best practices</span>
+                            </div>
+                        {{ /if }}
+                    </div>
+                </div>
+
+                <!-- Right Column - Form -->
+                <div class="relative">
+                    <!-- Decorative card background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-dark to-orange rounded-3xl shadow-2xl transform rotate-1"></div>
+                    <div class="relative bg-blue-dark rounded-3xl p-8 lg:p-10 shadow-2xl">
+                        
+                        {{ form:newsletter }}
+                            {{ if success }}
+                                <!-- Success State -->
+                                <div class="text-center">
+                                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <i class="fas fa-check text-white text-2xl"></i>
+                                    </div>
+                                    <h3 class="text-white font-bold text-2xl mb-4">You're All Set! 🎉</h3>
+                                    <p class="text-blue-light mb-6">
+                                        Welcome to the newsletter! Check your email for a confirmation message.
+                                    </p>
+                                    <button onclick="location.reload()" class="text-orange hover:text-white transition-colors">
+                                        Subscribe Another Email →
+                                    </button>
+                                </div>
+                            {{ /if }}
+
+                            {{ if errors }}
+                                <!-- Error State -->
+                                <div class="bg-red-500/20 border border-red-400/50 rounded-2xl p-6 mb-6">
+                                    <div class="flex items-center mb-3">
+                                        <i class="fas fa-exclamation-triangle text-red-400 mr-3"></i>
+                                        <h4 class="text-white font-semibold">Please fix the following:</h4>
+                                    </div>
+                                    <div class="text-red-100 space-y-1">
+                                        {{ errors }}
+                                            <p>• {{ value }}</p>
+                                        {{ /errors }}
+                                    </div>
+                                </div>
+                            {{ /if }}
+
+                            {{ unless success }}
+                                <!-- Form Header -->
+                                <div class="text-center mb-8">
+                                    <h3 class="text-white font-playfair text-2xl lg:text-3xl font-bold mb-3">
+                                        Join the Community
+                                    </h3>
+                                    <p class="text-blue-light">
+                                        Get started with your free subscription today
+                                    </p>
+                                </div>
+
+                                <!-- Form Fields -->
+                                <div class="space-y-5">
+                                    <!-- Name Field -->
+                                    <div>
+                                        <label for="name" class="block text-blue-light text-sm font-medium mb-2">
+                                            First Name
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            name="name" 
+                                            id="name"
+                                            placeholder="Enter your first name"
+                                            value="{{ old:name }}"
+                                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-light/70 focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-300"
+                                            required>
+                                        {{ if error:name }}
+                                            <p class="text-red-300 text-sm mt-2">{{ error:name }}</p>
+                                        {{ /if }}
+                                    </div>
+                                    
+                                    <!-- Email Field -->
+                                    <div>
+                                        <label for="email" class="block text-blue-light text-sm font-medium mb-2">
+                                            Email Address
+                                        </label>
+                                        <input 
+                                            type="email" 
+                                            name="email" 
+                                            id="email"
+                                            placeholder="your.email@example.com"
+                                            value="{{ old:email }}"
+                                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-blue-light/70 focus:outline-none focus:ring-2 focus:ring-orange focus:border-orange transition-all duration-300"
+                                            required>
+                                        {{ if error:email }}
+                                            <p class="text-red-300 text-sm mt-2">{{ error:email }}</p>
+                                        {{ /if }}
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <button 
+                                    type="submit"
+                                    class="w-full mt-6 bg-orange text-white py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-orange/90 hover:scale-[1.02] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange/50 group"
+                                >
+                                    <span class="flex items-center justify-center">
+                                        <i class="fas fa-paper-plane mr-2 group-hover:translate-x-1 transition-transform"></i>
+                                        {{ newsletter_button_text ?? "Subscribe Now" }}
+                                    </span>
+                                </button>
+
+                                <!-- Privacy Note -->
+                                <p class="text-blue-light/80 text-sm text-center mt-4 leading-relaxed">
+                                    <i class="fas fa-shield-alt mr-2 text-orange"></i>
+                                    {{ newsletter_privacy_text ?? "Your privacy is important to us. We'll never spam you or share your email address." }}
+                                </p>
+
+                                <!-- Social Proof -->
+                                <div class="flex items-center justify-center mt-6 space-x-2 text-blue-light/60 text-sm">
+                                    <div class="flex -space-x-2">
+                                        <div class="w-6 h-6 bg-orange rounded-full border-2 border-blue-dark"></div>
+                                        <div class="w-6 h-6 bg-blue-light rounded-full border-2 border-blue-dark"></div>
+                                        <div class="w-6 h-6 bg-orange/70 rounded-full border-2 border-blue-dark"></div>
+                                    </div>
+                                    <span>Trusted by 500+ developers</span>
+                                </div>
+                            {{ /unless }}
+                        {{ /form:newsletter }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

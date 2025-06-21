@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 template: pages
 updated_by: 8bbbbdca-7fc9-4c6a-a206-192c6c7e2726
-updated_at: 1749730346
+updated_at: 1750514049
 blocks:
   -
     id: mbmcl9ua
@@ -45,5 +45,9 @@ blocks:
       - tech-icons/statamic.svg
       - tech-icons/figma.svg
     type: technology
+    enabled: true
+  -
+    id: mc6av51h
+    type: newsletter
     enabled: true
 ---

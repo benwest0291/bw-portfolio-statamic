@@ -18,6 +18,7 @@ tabs:
             field:
               type: replicator
               display: Blocks
+              collapse: true
               sets:
                 blocks:
                   display: Blocks
@@ -44,6 +45,13 @@ tabs:
                         -
                           import: breadcrumbs
                           prefix: breadcrumbs_
+                    newsletter:
+                      display: Newsletter
+                      icon: mail-envelope-letter-send-2
+                      fields:
+                        -
+                          import: newsletter
+                          prefix: newsletter_
   sidebar:
     display: Sidebar
     sections:

@@ -1,5 +1,32 @@
 title: 'Global Details'
 data:
+  phone_number: '077126 75 124'
+  email: hello@benwest.dev
+  linkedin: 'https://www.linkedin.com/in/ben-west-020691/'
+  github: 'https://github.com/benwest0291'
+  blue_sky: 'https://bsky.app/'
+  calendly_link: 'https://calendly.com/'
   logo: logos/bw-logo.svg
-  copyright: '© 2025 Ben West'
+  available_for_work: true
+  work_text: 'Available for work'
+  heading_one: Services
+  heading_two: 'Useful Links'
+  heading_three: Resources
+  heading_four: "Let's Connect"
+  footer_text: 'Specialissed full-stack developer creating cutting-edge web applications with Laravel, Anguler, and Statamic CMS. Delivering exceptional digital experiences that drive business growth and user engagement.'
+  copyright: '<span class="text-orange">©</span> 2025 Ben West'
   flair: 'Designed & Built with <span class="heart-beat inline-block">  ❤️ </span> by Ben West'
+  location: 'Based in West Malling'
+  newsletter_heading: 'Stay Updated'
+  certifications_heading: 'Certifications & Recognition'
+  certifications:
+    - 'Laravel Certified Developer'
+    - 'Statamic Certified Developer'
+    - 'Angular Development Specialist'
+    - 'Le Wagon Graduate'
+  header:
+    code: null
+    mode: htmlmixed
+  footer:
+    code: null
+    mode: htmlmixed

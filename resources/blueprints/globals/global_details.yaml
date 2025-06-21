@@ -1,7 +1,46 @@
 tabs:
   main:
-    display: Main
+    display: 'Company Details'
     sections:
+      -
+        display: Contact
+        fields:
+          -
+            handle: phone_number
+            field:
+              type: text
+              display: 'Phone Number'
+              width: 50
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              width: 50
+          -
+            handle: linkedin
+            field:
+              type: text
+              display: Linkedin
+              width: 50
+          -
+            handle: github
+            field:
+              type: text
+              display: Github
+              width: 50
+          -
+            handle: blue_sky
+            field:
+              type: text
+              display: 'Blue Sky'
+              width: 50
+          -
+            handle: calendly_link
+            field:
+              type: text
+              display: 'Calendly Link'
+              width: 50
       -
         display: Header
         fields:
@@ -12,9 +51,50 @@ tabs:
               container: assets
               type: assets
               display: Logo
+          -
+            handle: available_for_work
+            field:
+              type: toggle
+              display: 'Available for work'
+              width: 50
+          -
+            handle: work_text
+            field:
+              type: text
+              display: 'Work Text'
+              width: 50
       -
         display: Footer
         fields:
+          -
+            handle: heading_one
+            field:
+              type: text
+              display: 'Heading One'
+              width: 50
+          -
+            handle: heading_two
+            field:
+              type: text
+              display: 'Heading Two'
+              width: 50
+          -
+            handle: heading_three
+            field:
+              type: text
+              display: 'Heading Three'
+              width: 50
+          -
+            handle: heading_four
+            field:
+              type: text
+              display: 'Heading Four'
+              width: 50
+          -
+            handle: footer_text
+            field:
+              type: textarea
+              display: 'Footer Text'
           -
             handle: copyright
             field:
@@ -28,6 +108,30 @@ tabs:
               display: Flair
               width: 50
               antlers: true
+          -
+            handle: location
+            field:
+              type: text
+              display: Location
+              width: 50
+          -
+            handle: newsletter_heading
+            field:
+              type: text
+              display: 'Newsletter Heading'
+              width: 50
+          -
+            handle: certifications_heading
+            field:
+              type: text
+              display: 'Certifications Heading'
+              width: 50
+          -
+            handle: certifications
+            field:
+              type: list
+              display: Certifications
+              width: 50
   scripts:
     display: Scripts
     sections:
@@ -44,16 +148,3 @@ tabs:
             field:
               type: code
               display: Footer
-  footer:
-    display: Footer
-    sections:
-      -
-        display: Footer
-        fields:
-          -
-            handle: footer_rosette
-            field:
-              min_files: 1
-              container: assets
-              type: assets
-              display: 'Footer Rosette'

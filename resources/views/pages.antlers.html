@@ -11,19 +11,22 @@
             :masthead_spare_button="masthead_spare_button"
         }}
 
-    {{ elseif type == "technology" }}
-
-        {{ partial:partials/blocks/technology
-            heading="{ technology_heading }"
-            technology_icons="{ technology_technology_icons }"
-        }}
-
     {{ elseif type == "breadcrumbs" }}
 
         {{ partial:partials/blocks/breadcrumbs
-            show_breadcrumbs="{ breadcrumbs_show_breadcrumbs }"
-            breadcrumb_separator="{ breadcrumbs_breadcrumb_separator }"
-            home_text="{ breadcrumbs_home_text }"
+            :show_breadcrumbs="breadcrumbs_show_breadcrumbs"
+            :breadcrumb_separator="breadcrumbs_breadcrumb_separator"
+            :home_text="breadcrumbs_home_text"
+        }}
+
+    {{ elseif type == "newsletter" }}
+
+        {{ partial:partials/blocks/newsletter
+            :newsletter_heading="newsletter_heading"
+            :newsletter_description="newsletter_description"
+            :newsletter_benefits="newsletter_benefits"
+            :newsletter_button_text="newsletter_button_text"
+            :newsletter_privacy_text="newsletter_privacy_text"
         }}
 
     {{ /if }}

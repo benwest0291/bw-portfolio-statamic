@@ -4,8 +4,38 @@ import Swiper from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 window.Alpine = Alpine;
+
+// Mega Menu Component
+window.megaMenuComponent = function() {
+    return {
+        isOpen: false,
+        
+        toggleMenu() {
+            this.isOpen = !this.isOpen;
+        },
+        
+        closeMenu() {
+            this.isOpen = false;
+        }
+    }
+}
+
+// Initialize Alpine stores
+Alpine.store('megaMenu', {
+    open: false,
+    
+    toggle() {
+        this.open = !this.open;
+    },
+    
+    close() {
+        this.open = false;
+    }
+});
+
 Alpine.start();
 
 document.addEventListener('DOMContentLoaded', function() {

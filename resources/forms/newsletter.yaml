@@ -1,0 +1,38 @@
+title: Newsletter
+fields:
+  -
+    handle: name
+    field:
+      type: text
+      display: Name
+      validate:
+        - required
+        - max:255
+      placeholder: 'Enter your first name'
+      instructions: 'Subscriber first name'
+  -
+    handle: email
+    field:
+      type: text
+      input_type: email
+      display: 'Email Address'
+      validate:
+        - required
+        - email
+      placeholder: 'your.email@example.com'
+      instructions: 'Subscriber email address'
+email:
+  -
+    to: admin@benwest.dev
+    from: 'no-reply@benwest.dev'
+    reply_to: '{{ email }}'
+    subject: 'New Newsletter Subscription'
+    template: newsletter-notification
+  -
+    to: '{{ email }}'
+    from: 'hello@benwest.dev'
+    reply_to: 'hello@benwest.dev'
+    subject: 'Welcome to the Newsletter!'
+    template: newsletter-welcome
+store: true
+honeypot: honeypot

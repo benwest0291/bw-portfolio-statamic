@@ -1,0 +1,54 @@
+title: Newsletter
+fields:
+  -
+    handle: newsletter_heading
+    field:
+      type: text
+      display: 'Newsletter Heading'
+      placeholder: 'Stay Updated with the Latest'
+      instructions: 'Main heading for the newsletter section'
+  -
+    handle: newsletter_description
+    field:
+      type: textarea
+      display: 'Newsletter Description'
+      placeholder: 'Get exclusive insights, project updates, and web development tips delivered directly to your inbox...'
+      instructions: 'Description text below the heading'
+  -
+    handle: newsletter_benefits
+    field:
+      type: replicator
+      display: 'Newsletter Benefits'
+      instructions: 'List of benefits for subscribing'
+      sets:
+        benefit:
+          display: Benefit
+          fields:
+            -
+              handle: icon
+              field:
+                type: text
+                display: Icon
+                placeholder: 'fas fa-check-circle'
+                instructions: 'Font Awesome icon class'
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+                placeholder: 'Weekly development insights'
+                instructions: 'Benefit description'
+  -
+    handle: newsletter_button_text
+    field:
+      type: text
+      display: 'Button Text'
+      placeholder: 'Subscribe Now'
+      instructions: 'Text for the subscribe button'
+  -
+    handle: newsletter_privacy_text
+    field:
+      type: text
+      display: 'Privacy Text'
+      placeholder: "Your privacy is important to us. We'll never spam you or share your email address."
+      instructions: 'Privacy notice text'
