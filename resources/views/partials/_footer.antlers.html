@@ -1,4 +1,4 @@
-<div class="w-full cta-background py-16 relative overflow-hidden">
+<section class="w-full cta-background py-16 relative overflow-hidden">
     <!-- Background pattern -->
     <div class="absolute inset-0 opacity-10">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-orange rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -45,30 +45,31 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <footer class="w-full bg-blue-dark py-16 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange to-transparent"></div>
     
     <!-- Decorative elements -->
     <div class="absolute top-0 left-0 w-full decorative-line"></div>
-    
-    <!-- Background decorative icons -->
-    <div class="hidden lg:block absolute top-80 left-1/4 text-orange/50 text-5xl transform animate-pulse">
-        <i class="fas fa-code animate-bounce-slow"></i>
-    </div>
-    <div class="hidden lg:block absolute bottom-1/4 right-16 text-blue-light/20 text-6xl transform -rotate-12 animate-float-1">
-        <i class="fas fa-laptop-code"></i>
-    </div>
-    <div class="hidden lg:block absolute top-1/2 left-8 text-orange/50 text-4xl transform rotate-90 animate-float-2">
-        <i class="fas fa-rocket"></i>
-    </div>
-    <div class="hidden lg:block absolute top-16 right-20 text-blue-light/35 text-5xl transform animate-float-3">
-        <i class="fas fa-lightbulb"></i>
-    </div>
-    <div class="hidden lg:block absolute top-1/2 right-1/3 text-orange/50 text-4xl transform rotate-12 animate-spin-slow">
-        <i class="fas fa-cog"></i>
-    </div>
+    {{ if global_details:show_icons }}
+        <!-- Background decorative icons -->
+        <div class="hidden lg:block absolute top-80 left-1/4 text-orange/50 text-5xl transform animate-pulse">
+            <i class="fas fa-code animate-bounce-slow"></i>
+        </div>
+        <div class="hidden lg:block absolute bottom-1/4 right-16 text-blue-light/20 text-6xl transform -rotate-12 animate-float-1">
+            <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="hidden lg:block absolute top-1/2 left-8 text-orange/50 text-4xl transform rotate-90 animate-float-2">
+            <i class="fas fa-rocket"></i>
+        </div>
+        <div class="hidden lg:block absolute top-16 right-20 text-blue-light/35 text-5xl transform animate-float-3">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="hidden lg:block absolute top-1/2 right-1/3 text-orange/50 text-4xl transform rotate-12 animate-spin-slow">
+            <i class="fas fa-cog"></i>
+        </div>
+    {{ /if }}
     
     <div class="container mx-auto px-4">
         <!-- Main Footer Content -->
@@ -87,7 +88,7 @@
                     </p>
                  {{ /if }}
                  
-                 <!-- Key Services -->
+                 <!-- Contact -->
                  <div class="space-y-3 mb-5">
                     {{ if global_details:email  }}
                         <a href="mailto:{{ global_details:email }}" class="text-blue-light hover:text-orange ease-in duration-300 text-sm flex items-center group">
@@ -128,7 +129,7 @@
             </div>
 
             <!-- Services -->
-            <div>
+            <nav aria-label="{{ global_details:heading_one }}">
                 {{ if global_details:heading_one }}
                     <h3 class="text-white font-playfair text-3xl mb-6">{{ global_details:heading_one }}</h3>
                 {{ /if }}
@@ -144,10 +145,10 @@
                     </li>
                     {{ /nav:services_navigation }}
                 </ul>
-            </div>
+            </nav>
 
             <!-- Quick Links -->
-            <div>
+            <nav aria-label="{{ global_details:heading_two }}">
                 {{ if global_details:heading_two }}
                     <h3 class="text-white font-playfair text-3xl mb-6">{{ global_details:heading_two }}</h3>
                 {{ /if }}
@@ -161,10 +162,10 @@
                         </li>
                     {{ /nav:useful_links_navigation }}
                 </ul>
-            </div>
+            </nav>
 
             <!-- Resources -->
-            <div>
+            <nav aria-label="{{ global_details:heading_three }}">
                 {{ if global_details:heading_three }}
                     <h3 class="text-white font-playfair text-3xl mb-6">{{ global_details:heading_three }}</h3>
                 {{ /if }}
@@ -178,7 +179,7 @@
                         </li>
                     {{ /nav:resources_navigation }}
                 </ul>
-            </div>
+            </nav>
 
             <!-- Connect -->
             <div>
@@ -190,15 +191,23 @@
                     <!-- Social Media -->
                     <div class="mb-8">
                         <div class="grid grid-cols-3 gap-3">
-                            <a href="#" class="bg-blue hover:bg-orange text-white p-4 rounded-lg transition-all duration-300 group flex items-center justify-center hover:scale-105 hover:shadow-lg relative overflow-hidden" title="LinkedIn" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin text-2xl group-hover:scale-110 transition-transform relative z-10"></i>
-                            </a>
-                            <a href="#" class="bg-blue hover:bg-orange text-white p-4 rounded-lg transition-all duration-300 group flex items-center justify-center hover:scale-105 hover:shadow-lg relative overflow-hidden" title="GitHub" aria-label="GitHub">
-                                <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform relative z-10"></i>
-                            </a>
-                            <a href="#" class="bg-blue hover:bg-orange text-white p-4 rounded-lg transition-all duration-300 group flex items-center justify-center hover:scale-105 hover:shadow-lg relative overflow-hidden" title="Bluesky" aria-label="Bluesky">
-                                <i class="fa-brands fa-bluesky text-2xl group-hover:scale-110 transition-transform relative z-10"></i>
-                            </a>
+                            {{ if global_details:linkedin }}
+                                <a href="{{ global_details:linkedin }}" target="_blank" class="bg-blue hover:bg-orange text-white p-4 rounded-lg transition-all duration-300 group flex items-center justify-center hover:scale-105 hover:shadow-lg relative overflow-hidden" title="LinkedIn" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin text-2xl group-hover:scale-110 transition-transform relative z-10"></i>
+                                </a>
+                            {{ /if }}
+
+                            {{ if global_details:github }}
+                                <a href="{{ global_details:github }} "target="_blank" class="bg-blue hover:bg-orange text-white p-4 rounded-lg transition-all duration-300 group flex items-center justify-center hover:scale-105 hover:shadow-lg relative overflow-hidden" title="GitHub" aria-label="GitHub">
+                                    <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform relative z-10"></i>
+                                </a>
+                            {{ /if }}
+
+                            {{ if global_details:blue_sky }}
+                                <a href="{{ global_details:blue_sky }}" target="_blank" class="bg-blue hover:bg-orange text-white p-4 rounded-lg transition-all duration-300 group flex items-center justify-center hover:scale-105 hover:shadow-lg relative overflow-hidden" title="Bluesky" aria-label="Bluesky">
+                                    <i class="fa-brands fa-bluesky text-2xl group-hover:scale-110 transition-transform relative z-10"></i>
+                                </a>
+                            {{ /if }}
                         </div>
                     </div>
                     
@@ -254,12 +263,14 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
-                    <div class="flex items-center space-x-4 text-sm">
-                        {{ nav:base_footer_navigation }}
-                            <a href="{{ url }}" class="text-gray-400 hover:text-orange ease-in duration-300">{{ title }}</a>
-                            <span class="text-gray-600">•</span>
-                        {{ /nav:base_footer_navigation }}
-                    </div>
+                    <nav aria-label="Footer links">
+                        <div class="flex items-center space-x-4 text-sm">
+                            {{ nav:base_footer_navigation }}
+                                <a href="{{ url }}" class="text-gray-400 hover:text-orange ease-in duration-300">{{ title }}</a>
+                                <span class="text-gray-600">•</span>
+                            {{ /nav:base_footer_navigation }}
+                        </div>
+                    </nav>
                     
                      {{ if global_details:available_for_work }}
                         <div class="flex items-center space-x-4 text-xs text-blue-light">

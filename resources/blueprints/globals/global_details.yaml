@@ -3,6 +3,98 @@ tabs:
     display: 'Company Details'
     sections:
       -
+        display: Header
+        fields:
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Logo
+              width: 50
+          -
+            handle: show_client_portal
+            field:
+              default: true
+              type: toggle
+              display: 'Show Client Portal'
+              width: 50
+          -
+            handle: available_for_work
+            field:
+              type: toggle
+              display: 'Available for work'
+              width: 50
+          -
+            handle: work_text
+            field:
+              type: text
+              display: 'Work Text'
+              width: 50
+          -
+            handle: header_heading_one
+            field:
+              type: text
+              display: 'Header Heading One'
+              width: 50
+          -
+            handle: header_heading_two
+            field:
+              type: text
+              display: 'Header Heading Two'
+              width: 50
+          -
+            handle: header_heading_three
+            field:
+              type: text
+              display: 'Header Heading Three'
+              width: 50
+          -
+            handle: show_icons
+            field:
+              type: toggle
+              display: 'Show icons'
+              width: 50
+      -
+        display: 'Header CTA'
+        fields:
+          -
+            handle: cta_heading
+            field:
+              type: text
+              display: 'CTA Heading'
+          -
+            handle: cta_content
+            field:
+              type: textarea
+              display: 'CTA Content'
+          -
+            handle: button
+            field:
+              type: group
+              display: Button
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+                -
+                  handle: link
+                  field:
+                    type: link
+                    display: Link
+                -
+                  handle: icon
+                  field:
+                    options:
+                      -
+                        key: 'fas fa-comment-dots'
+                        value: Comment
+                    type: select
+                    display: Icon
+      -
         display: Contact
         fields:
           -
@@ -40,28 +132,6 @@ tabs:
             field:
               type: text
               display: 'Calendly Link'
-              width: 50
-      -
-        display: Header
-        fields:
-          -
-            handle: logo
-            field:
-              max_files: 1
-              container: assets
-              type: assets
-              display: Logo
-          -
-            handle: available_for_work
-            field:
-              type: toggle
-              display: 'Available for work'
-              width: 50
-          -
-            handle: work_text
-            field:
-              type: text
-              display: 'Work Text'
               width: 50
       -
         display: Footer

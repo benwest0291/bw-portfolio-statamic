@@ -4,12 +4,12 @@ blueprint: pages
 title: Home
 template: pages
 updated_by: 8bbbbdca-7fc9-4c6a-a206-192c6c7e2726
-updated_at: 1750514049
+updated_at: 1750608451
 blocks:
   -
     id: mbmcl9ua
     masthead_heading: 'Frontend Developer & <br> Product <span class="text-orange">Builde<span class="hammer-letter">r</span></span>'
-    masthead_sub_heading: 'Building performant, accessible web applications and bespoke websites'
+    masthead_sub_heading: 'We make beautiful websites for ambitious clients. Our mission is to provide our clients with high quality, innovative digital solutions.'
     type: masthead
     enabled: true
     masthead_background_image: code/masthead-bg.png
