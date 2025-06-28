@@ -4,7 +4,7 @@ blueprint: pages
 title: Home
 template: pages
 updated_by: 8bbbbdca-7fc9-4c6a-a206-192c6c7e2726
-updated_at: 1751128865
+updated_at: 1751130504
 blocks:
   -
     id: mbmcl9ua
@@ -21,13 +21,6 @@ blocks:
       link: 'entry::9c4f69f3-7818-4035-927d-19d6bbb36ff5'
     masthead_rossette:
       - logos/statamic-cred.svg
-  -
-    id: mbtbxh1e
-    breadcrumbs_show_breadcrumbs: true
-    breadcrumbs_breadcrumb_separator: arrow
-    breadcrumbs_home_text: Home
-    type: breadcrumbs
-    enabled: true
   -
     id: mcgdrb39
     type: services
@@ -80,6 +73,11 @@ blocks:
         link: '/services#consultancy'
         type: consultancy
         enabled: true
+    services_section_label: Services
+    services_section_heading: 'Bespoke Digital Solutions'
+    services_section_paragraph: 'A service offering designed to meet your every need'
+    services_section_link_url: /services
+    services_section_link_text: 'View All Services'
   -
     id: mbtbpj46
     technology_heading: 'My Toolkit'
