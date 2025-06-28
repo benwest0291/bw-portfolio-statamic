@@ -28,7 +28,6 @@ initMastheadAnimations();
 initServicesAnimations();
 initTechnologySlider();
 
-
 // Initialize Technology Slider
 function initTechnologySlider() {
     const technologySlider = document.querySelector('.technology-slider');
