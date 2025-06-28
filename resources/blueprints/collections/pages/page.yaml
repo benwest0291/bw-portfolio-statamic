@@ -52,6 +52,13 @@ tabs:
                         -
                           import: newsletter
                           prefix: newsletter_
+                    services:
+                      display: Services
+                      icon: programming-script-code-brackets
+                      fields:
+                        -
+                          import: services
+                          prefix: services_
   sidebar:
     display: Sidebar
     sections:

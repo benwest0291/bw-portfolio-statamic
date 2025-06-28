@@ -1,0 +1,150 @@
+title: Services
+fields:
+  section_label:
+    type: text
+    display: Section Label
+    default: Services
+  section_heading:
+    type: text
+    display: Section Heading
+    default: Bespoke Digital Solutions
+  section_paragraph:
+    type: textarea
+    display: Section Paragraph
+    default: A service offering designed to meet your every need
+  section_link_url:
+    type: text
+    display: Section Link URL
+    default: /services
+  section_link_text:
+    type: text
+    display: Section Link Text
+    default: View All Services
+  services:
+    type: replicator
+    display: Services
+    sets:
+      web_design:
+        display: Web Design
+        fields:
+          - handle: title
+            field:
+              type: text
+              display: Title
+              default: Web Design
+          - handle: icon
+            field:
+              type: text
+              display: Icon Class
+              instructions: 'Font Awesome class, e.g. fas fa-paint-brush'
+              default: fas fa-paint-brush
+          - handle: description
+            field:
+              type: textarea
+              display: Description
+              default: 'We create digital art. Every pixel is meticulously crafted for elegance, clarity, and emotional resonance. Your brand, reimagined for the modern world.'
+          - handle: tags
+            field:
+              type: array
+              display: Tags
+              default:
+                - Figma
+                - Adobe XD
+          - handle: link
+            field:
+              type: text
+              display: Link
+              default: /services#web-design
+      web_development:
+        display: Web Development
+        fields:
+          - handle: title
+            field:
+              type: text
+              display: Title
+              default: Web Development
+          - handle: icon
+            field:
+              type: text
+              display: Icon Class
+              default: fas fa-code
+          - handle: description
+            field:
+              type: textarea
+              display: Description
+              default: 'We engineer seamless, lightning-fast experiences. Our code is invisible, but the results are unforgettable—robust, scalable, and future-proof.'
+          - handle: tags
+            field:
+              type: array
+              display: Tags
+              default:
+                - Laravel
+                - Vue.js
+                - Statamic
+          - handle: link
+            field:
+              type: text
+              display: Link
+              default: /services#web-development
+      software_development:
+        display: Software Development
+        fields:
+          - handle: title
+            field:
+              type: text
+              display: Title
+              default: Software Development
+          - handle: icon
+            field:
+              type: text
+              display: Icon Class
+              default: fas fa-cubes
+          - handle: description
+            field:
+              type: textarea
+              display: Description
+              default: 'Bespoke solutions for the bold. We build software that empowers, automates, and transforms—crafted for your unique vision.'
+          - handle: tags
+            field:
+              type: array
+              display: Tags
+              default:
+                - PHP
+                - Node.js
+                - API
+          - handle: link
+            field:
+              type: text
+              display: Link
+              default: /services#software-development
+      consultancy:
+        display: Consultancy & Support
+        fields:
+          - handle: title
+            field:
+              type: text
+              display: Title
+              default: Consultancy & Support
+          - handle: icon
+            field:
+              type: text
+              display: Icon Class
+              default: fas fa-headset
+          - handle: description
+            field:
+              type: textarea
+              display: Description
+              default: 'Your trusted digital partner. We offer strategic insight and white-glove support, guiding you from vision to victory—every step of the way.'
+          - handle: tags
+            field:
+              type: array
+              display: Tags
+              default:
+                - Strategy
+                - Support
+                - Consulting
+          - handle: link
+            field:
+              type: text
+              display: Link
+              default: /services#consultancy

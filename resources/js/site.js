@@ -1,5 +1,5 @@
 import Alpine from "alpinejs";
-import { initMastheadAnimations } from "./gsap/index.js";
+import { initMastheadAnimations, initServicesAnimations } from "./gsap/index.js";
 import Swiper from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -23,25 +23,11 @@ window.megaMenuComponent = function() {
     }
 }
 
-// Initialize Alpine stores
-Alpine.store('megaMenu', {
-    open: false,
-    
-    toggle() {
-        this.open = !this.open;
-    },
-    
-    close() {
-        this.open = false;
-    }
-});
-
 Alpine.start();
+initMastheadAnimations();
+initServicesAnimations();
+initTechnologySlider();
 
-document.addEventListener('DOMContentLoaded', function() {
-    initMastheadAnimations();
-    initTechnologySlider();
-});
 
 // Initialize Technology Slider
 function initTechnologySlider() {

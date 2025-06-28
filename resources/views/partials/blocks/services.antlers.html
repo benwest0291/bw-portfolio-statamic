@@ -1,0 +1,55 @@
+<section class="py-16">
+    <div class="container mx-auto px-4 lg:px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-8 flex items-center justify-between">
+                {{ if section_label }}
+                    <div class="inline-flex items-center px-4 py-2 bg-orange/10 rounded-full text-orange text-sm font-semibold">
+                        <i class="fas fa-layer-group mr-2"></i>
+                        {{ section_label }}
+                    </div>
+                {{ /if }}
+
+                {{ if section_link_url && section_link_text }}
+                    <a href="{{ section_link_url }}" class="hidden md:inline-flex items-center gap-2 px-5 py-2 bg-orange text-white rounded-xl font-semibold text-sm shadow hover:bg-orange/90 transition-colors">
+                        {{ section_link_text }}
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                {{ /if }}
+            </div>
+            
+            {{ if section_heading }}
+                <h2 class="services-section-heading text-blue-dark font-playfair text-3xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                    {{ section_heading }}
+                </h2>
+            {{ /if }}
+
+            {{ if section_paragraph }}
+                <p class="services-section-subheading text-blue text-lg lg:text-xl mb-8 leading-relaxed">{{ section_paragraph }}</p>
+            {{ /if }}
+
+            {{ if services }}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {{ services }}
+                        <div class="gsap-service bg-blue-light rounded-3xl p-8 lg:p-12 shadow-2xl border-0 relative overflow-hidden" data-illustration="{{ type }}">
+                            <div class="absolute inset-0 bg-blue-dark rounded-3xl transform rotate-1 pointer-events-none" aria-hidden="true"></div>
+                            <div class="relative z-10">
+                                <h3 class="text-white text-3xl lg:text-4xl font-playfair font-bold mb-3 flex items-center gap-3">
+                                    <i class="{{ icon }} text-orange"></i> {{ title }}
+                                </h3>
+                                <p class="text-white text-lg font-light mb-3">{{ description }}</p>
+                                <div class="flex flex-wrap gap-2 mb-2">
+                                    {{ tags }}
+                                        <span class="bg-blue-light text-blue text-xs font-semibold px-3 py-1 rounded-full">{{ value }}</span>
+                                    {{ /tags }}
+                                </div>
+                                <a href="{{ link }}" class="inline-flex items-center gap-2 mt-4 text-white group">
+                                    Learn More <i class="fas fa-arrow-right text-orange group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    {{ /services }}
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+</section>

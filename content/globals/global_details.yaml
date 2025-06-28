@@ -7,7 +7,7 @@ data:
   header_heading_one: Services
   header_heading_two: Resources
   header_heading_three: "Let's Connect"
-  show_icons: true
+  show_icons: false
   cta_heading: 'Ready to Build Something Amazing?'
   cta_content: "Let's discuss your project and bring your vision to life with cutting-edge technology and proven expertise."
   button:

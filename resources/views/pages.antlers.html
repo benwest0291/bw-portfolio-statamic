@@ -19,6 +19,17 @@
             :home_text="breadcrumbs_home_text"
         }}
 
+    {{ elseif type == "services" }}
+
+        {{ partial:partials/blocks/services 
+            :services="services_services" 
+            :section_label="services_section_label"
+            :section_heading="services_section_heading"
+            :section_paragraph="services_section_paragraph"
+            :section_link_url="services_section_link_url"
+            :section_link_text="services_section_link_text"
+        }}
+
     {{ elseif type == "newsletter" }}
 
         {{ partial:partials/blocks/newsletter
